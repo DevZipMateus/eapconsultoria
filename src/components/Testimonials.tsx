@@ -41,17 +41,17 @@ const Testimonials = () => {
   };
   
   return (
-    <section className="section bg-white">
-      <div className="container-custom">
+    <section className="section bg-white overflow-x-hidden w-full">
+      <div className="container-custom px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-block bg-[#18252e]/10 text-[#18252e] font-medium px-4 py-1.5 rounded-full text-sm mb-4">
             Depoimentos
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
             O que nossos clientes dizem
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-base sm:text-lg px-2">
             Conheça a experiência de quem já utiliza nossos serviços jurídicos e confia em nossa expertise.
           </p>
         </div>
@@ -60,37 +60,37 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto relative">
           {/* Testimonial Card */}
           <div 
-            className="relative bg-white rounded-xl p-8 md:p-10 shadow-sm animate-fade-in"
+            className="relative bg-white rounded-xl p-5 sm:p-8 md:p-10 shadow-sm animate-fade-in"
             key={testimonials[activeIndex].id}
           >
             {/* Quotation Mark */}
-            <div className="absolute -top-6 left-8 text-6xl text-[#18252e]/20">"</div>
+            <div className="absolute -top-6 left-4 sm:left-8 text-5xl sm:text-6xl text-[#18252e]/20">"</div>
             
             {/* Content */}
-            <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex flex-col md:flex-row gap-6 sm:gap-8">
               {/* Avatar */}
               <div className="md:w-1/4 flex flex-col items-center">
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden mb-3 sm:mb-4">
                   <img 
                     src={testimonials[activeIndex].image} 
                     alt={testimonials[activeIndex].name} 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 text-center">{testimonials[activeIndex].name}</h4>
-                <p className="text-sm text-gray-600 text-center">{testimonials[activeIndex].position}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 text-center">{testimonials[activeIndex].name}</h4>
+                <p className="text-xs sm:text-sm text-gray-600 text-center">{testimonials[activeIndex].position}</p>
                 
                 {/* Rating */}
                 <div className="flex justify-center mt-2">
                   {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                    <Star key={i} className="text-yellow-400 fill-current" size={16} />
+                    <Star key={i} className="text-yellow-400 fill-current" size={14} />
                   ))}
                 </div>
               </div>
               
               {/* Testimonial Text */}
               <div className="md:w-3/4">
-                <p className="text-gray-600 text-lg italic mb-6">
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg italic mb-4 sm:mb-6">
                   "{testimonials[activeIndex].content}"
                 </p>
               </div>
@@ -98,13 +98,13 @@ const Testimonials = () => {
           </div>
           
           {/* Navigation Buttons */}
-          <div className="flex justify-center mt-8 space-x-4">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-4">
             <button 
               onClick={prevTestimonial}
-              className="p-2 rounded-full bg-gray-100 hover:bg-[#18252e]/10 text-gray-600 hover:text-[#18252e] transition-colors duration-300"
+              className="p-1.5 sm:p-2 rounded-full bg-gray-100 hover:bg-[#18252e]/10 text-gray-600 hover:text-[#18252e] transition-colors duration-300"
               aria-label="Previous testimonial"
             >
-              <ArrowLeft size={20} />
+              <ArrowLeft size={18} />
             </button>
             
             {/* Indicator Dots */}
@@ -113,8 +113,8 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    activeIndex === index ? 'bg-[#18252e] w-6' : 'bg-gray-300'
+                  className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
+                    activeIndex === index ? 'bg-[#18252e] w-5 sm:w-6' : 'bg-gray-300'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -123,10 +123,10 @@ const Testimonials = () => {
             
             <button 
               onClick={nextTestimonial}
-              className="p-2 rounded-full bg-gray-100 hover:bg-[#18252e]/10 text-gray-600 hover:text-[#18252e] transition-colors duration-300"
+              className="p-1.5 sm:p-2 rounded-full bg-gray-100 hover:bg-[#18252e]/10 text-gray-600 hover:text-[#18252e] transition-colors duration-300"
               aria-label="Next testimonial"
             >
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </button>
           </div>
         </div>
